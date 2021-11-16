@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+body .section-outer {
+  border-bottom: 1px solid #D8E3FE;
+}
+body .section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+body .section-inner--wide {
+  max-width: 1200px;
+}
+
+.section-header .section-inner {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.section-hero-image {
+  background-color: #F4F7FF;
+}
+
+.section-customers .section-inner {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.section-plan-and-manage {
+  background-color: #F5F8FF;
+}
+
+.section-stats {
+  background-color: #E9EFFF;
+}
+.section-stats .section-inner {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.section-blog {
+  background-color: #F5F8FF;
+}
+
+.section-quotes {
+  background-color: #EAF0FF;
+}
+
+.section-get-started {
+  background-color: #6888FF;
+}
+.section-get-started .section-inner {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.section-newsletter {
+  background-color: #FCFDFF;
+}
+
+.section-footer {
+  border-bottom: none;
+}
+.section-footer .section-inner {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+/*# sourceMappingURL=styles.css.map */
