@@ -224,6 +224,16 @@ h5 {
 .section-customers .section-inner {
   padding-bottom: 60px;
   padding-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-customers a {
+  opacity: 0.3;
+}
+.section-customers a:hover {
+  transition: 0.2s;
+  opacity: 1;
 }
 
 .section-plan-and-manage {

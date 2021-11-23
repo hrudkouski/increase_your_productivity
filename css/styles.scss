@@ -306,6 +306,18 @@ h5 {
   .section-inner {
     padding-bottom: $padding-vertical-sm;
     padding-top: $padding-vertical-sm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    opacity: .3;
+
+    &:hover {
+      transition: $transition;
+      opacity: 1;
+    }
   }
 }
 
