@@ -61,13 +61,14 @@ body {
   @include quicksand;
   padding: $base*3 $base*4;
   margin: 0;
-  border: 0;
+  border: 1px transparent solid;
   border-radius: 2px;
   background: none;
   text-decoration: none;
   font-weight: $fw-bold;
   font-size: $fs-sm;
   transition: $transition;
+  box-sizing: border-box;
 
   &--primary {
     background-color: #D2E1FF;
@@ -76,6 +77,40 @@ body {
     &:hover {
       background-color: darken(#D2E1FF, 5%);
     }
+  }
+
+  &--secondary {
+    background-color: #4C85FF;
+    color: #FFFFFF;
+
+    &:hover {
+      background-color: darken(#4C85FF, 5%);
+    }
+  }
+
+  &--no-bg {
+    background-color: #F5F8FF;
+    color: #ADB4D2;
+    border: solid 1px #D1D1E4;
+
+    &:hover {
+      color: darken(#ADB4D2, 10%);
+      border: solid 1px darken(#D1D1E4, 10%);
+    }
+  }
+}
+
+.btn-group {
+  display: inline-flex;
+
+  .btn:nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn:nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 
@@ -286,17 +321,22 @@ h5 {
   border-radius: 100%;
   box-shadow: 0 10px 50px 0 rgba(201, 209, 231, 0.6);
 
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    border-color: transparent;
-    border-style: solid;
-    border-width: $base*2 $base*3;
-    border-left-color: #5E81FF;
-    margin-left: $base*4;
+  svg {
+    width: $base*3;
+    height: $base*3;
   }
+
+  //&::before {
+  //  display: block;
+  //  width: 0;
+  //  height: 0;
+  //  content: '';
+  //  border-color: transparent;
+  //  border-style: solid;
+  //  border-width: $base*2 $base*3;
+  //  border-left-color: #5E81FF;
+  //  margin-left: $base*4;
+  //}
 }
 
 // === </HERO-IMAGE> ===
@@ -326,6 +366,39 @@ h5 {
 // === <PLAN-AND-MANAGE> ===
 .section-plan-and-manage {
   background-color: #F5F8FF;
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    width: 50%;
+    margin-bottom: $base*20;
+
+    .aside-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+
+    h3 {
+      font-weight: $fw-light;
+      margin-bottom: $base*7;
+
+      span {
+        font-weight: $fw-medium;
+      }
+    }
+
+    .text {
+      line-height: 2;
+      margin-bottom: $base*12;
+    }
+
+    .btn-group {
+      svg {
+        margin-left: $base*2;
+      }
+    }
+  }
 }
 
 // === </PLAN-AND-MANAGE> ===
