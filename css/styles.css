@@ -36,14 +36,22 @@ body {
   color: #3A79FF;
 }
 .btn--primary:hover {
-  background-color: #b9d0ff;
+  background-color: #9fbfff;
 }
 .btn--secondary {
   background-color: #4C85FF;
   color: #FFFFFF;
+  font-weight: 700;
 }
 .btn--secondary:hover {
-  background-color: #3374ff;
+  background-color: #1962ff;
+}
+.btn--danger {
+  background-color: #FFD7D7;
+  color: #D43F3F;
+}
+.btn--danger:hover {
+  background-color: #ffa4a4;
 }
 .btn--no-bg {
   background-color: #F5F8FF;
@@ -86,6 +94,7 @@ h3 {
 
 h4 {
   font-size: 24px;
+  margin-bottom: 92px;
 }
 
 h5 {
@@ -285,6 +294,88 @@ h5 {
 }
 .section-plan-and-manage__content .btn-group svg {
   margin-left: 8px;
+}
+
+.section-features {
+  background: url("/img/bg-features-clouds.svg") no-repeat 50% 50%;
+}
+.section-features .btns {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.section-features h5 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.section-features h4 {
+  font-weight: 700;
+}
+
+.features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  text-align: center;
+}
+.features-list__item {
+  flex-basis: 25%;
+  position: relative;
+}
+.features-list__item:not(:first-child) {
+  margin-left: 40px;
+}
+.features-list__item:not(:first-child)::before {
+  position: absolute;
+  top: 40%;
+  right: 100%;
+  width: 28px;
+  height: 1px;
+  content: "";
+  background-color: #DAE4FE;
+}
+.features-list__item-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 32px;
+  background-color: #F1F5FF;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.features-list__item-title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #4074F8;
+  margin-top: 28px;
+}
+.features-list__item-text {
+  margin-bottom: 92px;
+}
+
+.or-block {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 40px;
+  margin: 0 16px;
+}
+.or-block::before, .or-block::after {
+  display: block;
+  width: 16px;
+  height: 1px;
+  content: "";
+  background-color: #DAE4FE;
+}
+.or-block::before {
+  margin-right: 16px;
+}
+.or-block::after {
+  margin-left: 16px;
 }
 
 .section-stats {

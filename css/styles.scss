@@ -75,16 +75,26 @@ body {
     color: #3A79FF;
 
     &:hover {
-      background-color: darken(#D2E1FF, 5%);
+      background-color: darken(#D2E1FF, 10%);
     }
   }
 
   &--secondary {
     background-color: #4C85FF;
     color: #FFFFFF;
+    font-weight: $fw-bold;
 
     &:hover {
-      background-color: darken(#4C85FF, 5%);
+      background-color: darken(#4C85FF, 10%);
+    }
+  }
+
+  &--danger {
+    background-color: #FFD7D7;
+    color: #D43F3F;
+
+    &:hover {
+      background-color: darken(#FFD7D7, 10%);
     }
   }
 
@@ -133,6 +143,7 @@ h3 {
 
 h4 {
   font-size: $base*6;
+  margin-bottom: $base*23;
 }
 
 h5 {
@@ -405,7 +416,99 @@ h5 {
 
 // === <FEATURES> ===
 .section-features {
+  background: url("/img/bg-features-clouds.svg") no-repeat 50% 50%;
 
+  .btns {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  h5 {
+    margin-bottom: $base*5;
+    font-weight: $fw-medium;
+  }
+
+  h4 {
+    font-weight: $fw-bold;
+  }
+}
+
+.features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  //justify-content: space-around;
+  text-align: center;
+
+  &__item {
+    flex-basis: 25%;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: 40px;
+    }
+
+    &:not(:first-child)::before {
+      position: absolute;
+      top: 40%;
+      right: 100%;
+      width: $base*7;
+      height: 1px;
+      content: '';
+      background-color: #DAE4FE;
+    }
+
+    &-icon {
+      width: $base*17;
+      height: $base*17;
+      margin: 0 auto $base*8;
+      background-color: #F1F5FF;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-title {
+      margin-bottom: $base*6;
+      font-weight: $fw-bold;
+      font-size: $fs-md;
+      color: #4074F8;
+      margin-top: $base*7;
+    }
+
+    &-text {
+      margin-bottom: $base*23;
+    }
+  }
+}
+
+.or-block {
+  display: inline-flex;
+  align-items: center;
+  font-size: $fs-sm;
+  font-weight: $fw-bold;
+  line-height: $base*10;
+  margin: 0 $base*4;
+
+  &::before,
+  &::after {
+    display: block;
+    width: $base*4;
+    height: 1px;
+    content: '';
+    background-color: #DAE4FE;
+  }
+
+  &::before {
+    margin-right: $base*4;
+  }
+
+  &::after {
+    margin-left: $base*4;
+  }
 }
 
 // === </FEATURES> ===
