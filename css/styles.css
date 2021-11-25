@@ -379,11 +379,40 @@ h5 {
 }
 
 .section-stats {
+  font-family: "Quicksand", sans-serif;
   background-color: #E9EFFF;
+  display: flex;
 }
-.section-stats .section-inner {
-  padding-bottom: 60px;
-  padding-top: 60px;
+.section-stats__icon {
+  margin-bottom: 24px;
+}
+.section-stats__number {
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+.section-stats__text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  width: 50%;
+}
+.section-stats__right, .section-stats__left {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+  padding: 64px 88px;
+}
+.section-stats__right {
+  align-items: flex-start;
+  color: #5E80FF;
+  background: linear-gradient(101.48deg, #E9EFFF 41.56%, #E0E9FF 81.53%);
+}
+.section-stats__left {
+  align-items: flex-end;
+  text-align: right;
+  color: #fff;
+  background: linear-gradient(229.32deg, #6888FF 12.77%, #5E80FF 73.11%);
 }
 
 .section-blog {
