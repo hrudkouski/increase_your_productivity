@@ -97,6 +97,15 @@ body {
     &:hover {
       background-color: darken(#4C85FF, 10%);
     }
+
+    &-inverted {
+      background-color: #FFFFFF;
+      color: #565F82;
+
+      &:hover {
+        background-color: darken(#FFFFFF, 10%);
+      }
+    }
   }
 
   &--danger {
@@ -116,6 +125,19 @@ body {
     &:hover {
       color: darken(#ADB4D2, 10%);
       border: solid 1px darken(#D1D1E4, 10%);
+    }
+
+    &-inverted {
+      background-color: transparent;
+      color: #C7D3FF;
+      line-height: 1;
+      font-weight: $fw-medium;
+      border: 1px solid #A0B4FF;
+
+      &:hover {
+        color: lighten(#C7D3FF, 10%);
+        border-color: lighten(#A0B4FF, 10%);
+      }
     }
   }
 
@@ -333,7 +355,7 @@ h5 {
 
       .text {
         line-height: 2;
-        width: 55%;
+        max-width: 55%;
         margin: 0 auto $base*5;
       }
     }
@@ -399,7 +421,7 @@ h5 {
   overflow: hidden;
 
   &__content {
-    width: 50%;
+    max-width: 50%;
     margin-bottom: $base*20;
 
     .aside-image {
@@ -549,7 +571,7 @@ h5 {
     font-size: $fs-lg;
     font-weight: $fw-medium;
     line-height: 1.5;
-    width: 50%;
+    max-width: 50%;
   }
 
   &__right,
@@ -801,7 +823,6 @@ h5 {
 
 // === <FAQ> ===
 .section-faq {
-
 }
 
 .faq-accordion {
@@ -874,7 +895,45 @@ h5 {
 
 // === <GET-STARTED> ===
 .section-get-started {
-  background-color: $color-secondary;
+  position: relative;
+  background: linear-gradient(229.32deg, #6888FF 12.77%, #5E80FF 73.11%);
+  color: #fff;
+  text-align: center;
+
+  .section-inner {
+    position: relative;
+    z-index: 10;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    background: url("/img/bg-clouds.svg") no-repeat 50% 50%;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  h2, h5 {
+    color: #fff;
+  }
+
+  h2 {
+    font-weight: $fw-light;
+
+    span {
+      font-weight: $fw-medium;
+    }
+  }
+
+  .text {
+    line-height: 2;
+    letter-spacing: 0.03em;
+    max-width: 80%;
+    margin: 0 auto $base*10;
+  }
 
   .section-inner {
     padding-bottom: $padding-vertical-sm;
