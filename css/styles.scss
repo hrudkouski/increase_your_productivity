@@ -72,11 +72,13 @@ body {
   border: 1px transparent solid;
   border-radius: 2px;
   background: none;
+  display: inline-block;
   text-decoration: none;
   font-weight: $fw-bold;
   font-size: $fs-sm;
   transition: $transition;
   box-sizing: border-box;
+  white-space: nowrap;
 
   &--primary {
     background-color: #D2E1FF;
@@ -114,6 +116,17 @@ body {
     &:hover {
       color: darken(#ADB4D2, 10%);
       border: solid 1px darken(#D1D1E4, 10%);
+    }
+  }
+
+  &--grayscale {
+    background-color: #E8ECF4;
+    color: #7382A3;
+    font-weight: $fw-medium;
+    font-size: $base*3.25;
+
+    &:hover {
+      background-color: darken(#E8ECF4, 10%);
     }
   }
 }
@@ -161,6 +174,7 @@ h5 {
   font-size: $base*2.5;
   margin-bottom: $base*4;
   font-weight: $fw-medium;
+  text-transform: uppercase;
 }
 
 .ta-c {
@@ -788,6 +802,72 @@ h5 {
 // === <FAQ> ===
 .section-faq {
 
+}
+
+.faq-accordion {
+  @include list-null;
+
+  &__item {
+    $parent: &;
+    border-bottom: 1px solid #D8E3FE;
+
+    &--active {
+      .arrow {
+        stroke: #495274;
+      }
+
+      #{$parent}-trigger {
+        color: #495274;
+        font-weight: $fw-bold;
+
+        &-icon {
+          transform: rotate(0);
+        }
+      }
+
+      #{$parent}-content {
+        display: flex;
+      }
+    }
+
+    &-trigger {
+      display: flex;
+      cursor: pointer;
+      padding: $base*4;
+
+      &-icon {
+        margin-right: $base*4;
+        width: $base*4;
+        text-align: center;
+        transform: rotate(180deg);
+
+        .arrow {
+          stroke: #8E96B7;
+        }
+      }
+
+      &-text {
+        font-size: $fs-md;
+        font-weight: $fw-medium;
+      }
+    }
+
+    &-content {
+      display: none;
+      padding: 0 $base*4 $base*4 $base*16;
+
+      &-text {
+        flex-grow: 1;
+        line-height: 2;
+        font-size: $fs-md;
+        letter-spacing: 0.03em;
+      }
+
+      &-btn {
+        margin-left: $base*15;
+      }
+    }
+  }
 }
 
 // === </FAQ> ===
