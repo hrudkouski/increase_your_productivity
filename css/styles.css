@@ -18,6 +18,20 @@ body {
   max-width: 1200px;
 }
 
+.input {
+  border: 1px transparent solid;
+  background: #EFEFF7;
+  border-radius: 4.8px;
+  color: #7A85AD;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+}
+.input--size-lg {
+  padding: 20px 24px;
+  border-radius: 4.8px;
+}
+
 .btn {
   font-family: "Quicksand", sans-serif;
   padding: 12px 16px;
@@ -32,6 +46,12 @@ body {
   transition: 0.2s;
   box-sizing: border-box;
   white-space: nowrap;
+  cursor: pointer;
+}
+.btn--size-lg {
+  padding: 20px 60px;
+  border-radius: 4.8px;
+  box-shadow: 0 5px 15px rgba(116, 104, 255, 0.2);
 }
 .btn--primary {
   background-color: #D2E1FF;
@@ -724,6 +744,41 @@ h5 {
 
 .section-newsletter {
   background-color: #FCFDFF;
+}
+.section-newsletter .section-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-newsletter__left {
+  flex-basis: 40%;
+}
+.section-newsletter__left-title {
+  font-family: "Quicksand", sans-serif;
+  color: #3D4F9F;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+.section-newsletter__left-text {
+  line-height: 2;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  font-size: 15px;
+}
+.section-newsletter__right {
+  flex-basis: 55%;
+}
+
+.forms-newsletter {
+  display: flex;
+}
+.forms-newsletter .input {
+  flex-grow: 1;
+}
+.forms-newsletter .btn {
+  margin-left: 12px;
 }
 
 .section-footer {
