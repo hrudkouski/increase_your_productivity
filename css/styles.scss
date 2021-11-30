@@ -224,37 +224,59 @@ body {
   }
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   @include quicksand;
   padding: 0;
   margin: 0;
   font-weight: $fw-regular;
-  color: $color-secondary-900;
+  //color: $color-secondary-900;
 }
 
-h1, h2 {
-  font-size: 48px;
-  margin-bottom: $base*7;
-}
-
-h3 {
-  font-weight: $fw-medium;
-  font-size: 36px;
-}
-
-h4 {
-  font-size: 24px;
-  margin-bottom: $base*23;
-  font-weight: $fw-medium;
-}
-
-h5 {
+h2 {
   @include roboto;
   font-size: 10px;
   margin-bottom: $base*4;
   font-weight: $fw-medium;
   text-transform: uppercase;
+  color: $color-secondary-900;
 }
+
+.section-subtitle {
+  @include quicksand;
+  font-size: 48px;
+  margin-bottom: $base*23;
+  color: $color-secondary-900;
+}
+
+//h3 {
+//  font-weight: $fw-medium;
+//  font-size: 36px;
+//}
+//
+//h4 {
+//  font-size: 24px;
+//  margin-bottom: $base*23;
+//  font-weight: $fw-medium;
+//}
+//
+//h5 {
+//  @include roboto;
+//  font-size: 10px;
+//  margin-bottom: $base*4;
+//  font-weight: $fw-medium;
+//  text-transform: uppercase;
+//}
 
 .ta-c {
   text-align: center;
@@ -298,9 +320,13 @@ h5 {
 }
 
 .logo {
-  width: $base*6.5;
-  height: $base*6.5;
-  border-radius: 100%;
+  &__link {
+    img {
+      width: $base*6.5;
+      height: $base*6.5;
+      border-radius: 100%;
+    }
+  }
 }
 
 .main-navigation {
@@ -393,14 +419,10 @@ h5 {
     height: $base*140;
     background-position: 50% 50%;
     background-size: cover;
+    background-repeat: no-repeat;
 
     &-content {
-
-      h5 {
-        letter-spacing: $base*0.5;
-      }
-
-      h2 {
+      .section-subtitle {
         font-weight: $fw-light;
         margin-bottom: $base*7;
 
@@ -474,7 +496,7 @@ h5 {
       left: 50%;
     }
 
-    h3 {
+    .section-subtitle {
       font-weight: $fw-light;
       margin-bottom: $base*7;
 
@@ -508,13 +530,14 @@ h5 {
     margin: 0 auto;
   }
 
-  h5 {
-    margin-bottom: $base*5;
-    font-weight: $fw-medium;
-  }
+  //h5 {
+  //  margin-bottom: $base*5;
+  //  font-weight: $fw-medium;
+  //}
 
-  h4 {
-    font-weight: $fw-bold;
+  .section-subtitle {
+    font-weight: $fw-medium;
+    font-size: $base*6;
   }
 }
 
@@ -557,11 +580,11 @@ h5 {
     }
 
     &-title {
+      @include roboto;
       margin-bottom: $base*6;
       font-weight: $fw-bold;
       font-size: $fs-md;
       color: $color-secondary-800;
-      margin-top: $base*7;
     }
 
     &-text {
@@ -650,6 +673,11 @@ h5 {
 // === <BLOG> ===
 .section-blog {
   background-color: $color-primary-50;
+
+  .section-subtitle {
+    font-weight: $fw-medium;
+    font-size: $base*6;
+  }
 
   .slider-wrapper {
     margin-bottom: $base*25;
@@ -760,8 +788,9 @@ h5 {
       &-content {
         margin-left: 9%;
 
-        .title {
-          font-weight: $fw-regular;
+        h3 {
+          color: $color-secondary-900;
+          font-size: $base*9;
           margin-bottom: $base*8;
         }
 
@@ -815,15 +844,16 @@ h5 {
 
   &__left {
 
-    h5 {
+    h2 {
       margin-bottom: $base*8;
       letter-spacing: 0.1em;
       line-height: $base*3;
     }
 
-    h3 {
+    .section-subtitle {
+      font-size: 36px;
+      font-weight: $fw-medium;
       margin-bottom: $base*4;
-      line-height: $base*11;
     }
 
     .text {
@@ -872,6 +902,13 @@ h5 {
 
 // === <FAQ> ===
 .section-faq {
+  .section-inner {
+    .section-subtitle {
+      font-size: 24px;
+      font-weight: $fw-medium;
+      margin-bottom: $base*17;
+    }
+  }
 }
 
 .faq-accordion {
@@ -887,11 +924,14 @@ h5 {
       }
 
       #{$parent}-trigger {
-        color: $color-primary-900;
-        font-weight: $fw-bold;
 
         &-icon {
           transform: rotate(0);
+        }
+
+        &-text {
+          color: $color-primary-900;
+          font-weight: $fw-bold;
         }
       }
 
@@ -917,8 +957,10 @@ h5 {
       }
 
       &-text {
-        font-size: $fs-md;
-        font-weight: $fw-medium;
+        h3 {
+          font-size: $fs-md;
+          font-weight: $fw-medium;
+        }
       }
     }
 
@@ -952,6 +994,27 @@ h5 {
   .section-inner {
     position: relative;
     z-index: 10;
+
+    h2 {
+      color: $color-white;
+    }
+
+    .section-subtitle {
+      margin-bottom: $base*6;
+      font-weight: $fw-light;
+      color: $color-white;
+
+      span {
+        font-weight: $fw-medium;
+      }
+    }
+
+    .text {
+      line-height: 2;
+      letter-spacing: 0.03em;
+      max-width: 80%;
+      margin: 0 auto $base*10;
+    }
   }
 
   &::before {
@@ -965,30 +1028,10 @@ h5 {
     right: 0;
   }
 
-  h2, h5 {
-    color: $color-white;
-  }
-
-  h2 {
-    font-weight: $fw-light;
-
-    span {
-      font-weight: $fw-medium;
-    }
-  }
-
-  .text {
-    line-height: 2;
-    letter-spacing: 0.03em;
-    max-width: 80%;
-    margin: 0 auto $base*10;
-  }
-
   .section-inner {
     padding-bottom: $padding-vertical-sm;
     padding-top: $padding-vertical-sm;
   }
-
 }
 
 // === </GET-STARTED> ===
@@ -1008,6 +1051,7 @@ h5 {
 
     &-title {
       @include quicksand();
+      text-transform: none;
       color: $color-secondary-900;
       font-weight: $fw-bold;
       line-height: 1.5;
