@@ -4,13 +4,8 @@
   "homepage": "https://hrudkouski.github.io/increase_your_productivity",
   "dependencies": {
     "browser-sync": "^2.27.7",
-    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "gulp-stylelint": "^13.0.0"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   }
 }

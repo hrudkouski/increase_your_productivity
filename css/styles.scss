@@ -20,6 +20,17 @@
 // === <VARIABLES> ===
 $base: 4px;
 
+$breakpoint-sm-min: 576px;
+$breakpoint-md-min: 768px;
+$breakpoint-lg-min: 992px;
+$breakpoint-xl-min: 1200px;
+$breakpoint-xxl-min: 1400px;
+$breakpoint-xs-max: $breakpoint-sm-min - 1px;
+$breakpoint-sm-max: $breakpoint-md-min - 1px;
+$breakpoint-md-max: $breakpoint-lg-min - 1px;
+$breakpoint-lg-max: $breakpoint-xl-min - 1px;
+$breakpoint-xl-max: $breakpoint-xxl-min - 1px;
+
 $fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 500;
@@ -91,6 +102,7 @@ body {
 
 .section-outer {
   border-bottom: 1px solid $color-gray-50;
+  padding: 0 $base*5;
 }
 
 .section-inner {
@@ -243,7 +255,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   font-weight: $fw-regular;
-  //color: $color-secondary-900;
 }
 
 h2 {
@@ -299,10 +310,6 @@ h2 {
   }
 }
 
-.nav {
-  margin-left: $base*18;
-}
-
 .logo {
   &__link {
     img {
@@ -316,6 +323,56 @@ h2 {
 .main-navigation {
   display: flex;
   align-items: center;
+
+  &__inner-wrap {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    margin-left: $base*18;
+
+    .section-header & {
+      @media (max-width: $breakpoint-md-max) {
+        display: none;
+      }
+    }
+
+    .section-footer & {
+      @media (max-width: $breakpoint-md-max) {
+        flex-direction: column;
+
+        &, .socials, .btn-wrapper {
+          margin-top: $base*4;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md-max) {
+    .section-footer & {
+      flex-direction: column;
+    }
+  }
+}
+
+.btn-burger {
+  display: none;
+  margin-left: auto;
+
+  &__line {
+    display: block;
+    width: $base*4;
+    height: $base/2;
+    background-color: $color-gray-100;
+
+    & + & {
+      margin-top: $base;
+    }
+  }
+
+  @media (max-width: $breakpoint-md-max) {
+    display: block;
+  }
 }
 
 .nav-wrapper {
@@ -386,6 +443,7 @@ h2 {
 // === <HERO-IMAGE> ===
 .section-hero-image {
   position: relative;
+  padding: 0;
 
   .dots {
     position: absolute;
@@ -514,11 +572,6 @@ h2 {
     margin: 0 auto;
   }
 
-  //h5 {
-  //  margin-bottom: $base*5;
-  //  font-weight: $fw-medium;
-  //}
-
   .section-subtitle {
     font-weight: $fw-medium;
     font-size: $base*6;
@@ -528,7 +581,6 @@ h2 {
 .features-list {
   @include list-null;
   display: flex;
-  //justify-content: space-around;
   text-align: center;
 
   &__item {
@@ -612,6 +664,7 @@ h2 {
   @include quicksand;
   background-color: $color-gray-50;
   display: flex;
+  padding: 0;
 
   &__icon {
     margin-bottom: $base*6;
@@ -792,6 +845,10 @@ h2 {
     left: 100%;
     margin-left: $base*19;
     transform: translateY(50%) rotate(180deg);
+  }
+
+  @media (max-width: $breakpoint-md-max) {
+    display: none;
   }
 }
 
@@ -1071,6 +1128,11 @@ h2 {
   font-weight: $fw-medium;
   margin-left: $base*24.5;
   margin-top: $base*7;
+
+  @media (max-width: $breakpoint-md-max) {
+    text-align: center;
+    margin-left: 0;
+  }
 }
 
 // === </FOOTER> ===
