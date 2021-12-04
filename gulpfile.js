@@ -2,6 +2,8 @@ const {src, dest, watch} = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const gulpStylelint = require('gulp-stylelint')
+// const critical = require('critical').stream;
+const cleanCSS = require('gulp-clean-css');
 
 function style() {
   return src('./css/**/*.scss')
@@ -14,6 +16,7 @@ function style() {
       ]
     }))
     .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
     .pipe(dest('./css/'))
     .pipe(browserSync.stream())
 }

@@ -4,8 +4,12 @@
   "homepage": "https://hrudkouski.github.io/increase_your_productivity",
   "dependencies": {
     "browser-sync": "^2.27.7",
+    "critical": "^4.0.1",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "gulp-stylelint": "^13.0.0"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "^4.3.0"
   }
 }
