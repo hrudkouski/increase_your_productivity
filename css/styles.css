@@ -2,6 +2,7 @@
 @import url("./normalize.css");
 body {
   font-family: "Roboto", sans-serif;
+  padding-top: 5rem;
   color: #8d96bd;
 }
 
@@ -334,7 +335,28 @@ h2 {
 }
 
 .section-header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #fff;
+}
+.section-header::before {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.section-header--active-nav::before {
+  display: block;
+}
+.section-header--active-nav .main-navigation__inner-wrap {
+  display: flex;
 }
 
 .btn-burger {

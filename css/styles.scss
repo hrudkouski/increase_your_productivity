@@ -104,7 +104,7 @@ $color-black: #000;
 // === <COMMON> ===
 body {
   @include roboto;
-
+  padding-top: $base*20;;
   color: $color-gray-500;
 }
 
@@ -274,7 +274,6 @@ body {
       background-color: darken($color-gray-50, 10%);
     }
   }
-
 }
 
 .btn-group {
@@ -488,7 +487,33 @@ h2 {
 
 // === <HEADER> ===
 .section-header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: $color-white;
+
+  &::before {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: '';
+    background-color: rgb(0, 0, 0, .5);
+  }
+
+  &--active-nav {
+    &::before {
+      display: block;
+    }
+
+    .main-navigation__inner-wrap {
+      display: flex;
+    }
+  }
 }
 
 .btn-burger {
