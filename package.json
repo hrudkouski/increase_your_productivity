@@ -10,6 +10,7 @@
     "gulp-stylelint": "^13.0.0"
   },
   "devDependencies": {
-    "gulp-clean-css": "^4.3.0"
+    "gulp-clean-css": "^4.3.0",
+    "swiper": "^7.3.1"
   }
 }
